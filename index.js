@@ -1,12 +1,13 @@
 import  express  from "express";
 import bodyParser from "body-parser";
 
+import usersRoutes from "./routes/users.js"
 const app=express();
 const PORT=5000;
 
 
 app.use(bodyParser.json()); //this tells the app that we will use data as a json
-
+app.use('/users', usersRoutes)
 app.get('/',(req, res) => {
     console.log("TEST")
 
