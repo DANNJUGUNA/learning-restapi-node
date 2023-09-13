@@ -16,7 +16,9 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) => {
     const user=req.body
-    users.push(user)
+    const userId=uuidv4();
+    const userWithId={...user,id:userId}
+    users.push(userWithId)
     res.send(users)
 })
 
